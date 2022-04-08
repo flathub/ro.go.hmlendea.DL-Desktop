@@ -24,18 +24,19 @@ modules:
       - install -Dm 644 "dl-desktop/${FLATPAK_ID}.desktop" "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm 644 "${FLATPAK_ID}.metainfo.xml" "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
       - install -Dm 755 "dl-desktop.sh" "/app/bin/dl-desktop"
-      - desktop-file-edit "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop" --set-key "Exec" --set-value "dl-desktop" --set-key "Icon" --set-value "${FLATPAK_ID}"
+      - desktop-file-edit "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+        --set-key "Exec" --set-value "dl-desktop" --set-key "Icon" --set-value "${FLATPAK_ID}"
     sources:
       - type: file
-        url: https://github.com/hmlendea/dl-desktop/releases/download/v3.0.0/dl-desktop_3.0.0_linux.zip
+        url: https://github.com/hmlendea/dl-desktop/releases/download/v3.1.0/dl-desktop_3.1.0_linux.zip
         dest-filename: dl-desktop.zip
-        sha256: c4115049f70da8d183b2609c54240d45d03786fa95c6b2309581482f03145967
+        sha256: d59147bd12b9ecc719f468b61edc39ff07df54d241ab23a5e2a5e3cea1428c9a
         x-checker-data:
           type: json
           url: https://api.github.com/repos/hmlendea/dl-desktop/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: .assets[] | select(.name=="dl-desktop_" + $version +
-            "_linux.zip") | .browser_download_url
+          url-query: .assets[] | select(.name=="dl-desktop_" + $version + "_linux.zip")
+            | .browser_download_url
       - type: file
         path: ro.go.hmlendea.DL-Desktop.metainfo.xml
       - type: file

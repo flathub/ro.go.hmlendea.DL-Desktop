@@ -18,6 +18,11 @@
       <image type="source">https://raw.githubusercontent.com/hmlendea/dl-desktop/85e7e81ad2a79cf75435683550a216dbc6a16797/preview.png</image>
     </screenshot>
   </screenshots>
+  <releases>
+    <release version="3.2.0" date="2022-04-09"/>
+    <release version="3.1.0" date="2022-04-08"/>
+    <release version="3.0.0" date="2022-03-23"/>
+  </releases>
   <content_rating type="oars-1.1"/>
   <update_contact>Horatiu.Mlendea@ProtonMail.com</update_contact>
 </component>

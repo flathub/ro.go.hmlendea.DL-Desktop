@@ -48,5 +48,6 @@ modules:
         dest-filename: dl-desktop.sh
         commands:
           - export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+          - cd /app/dl-desktop
           - exec zypak-wrapper /app/dl-desktop/dl-desktop /app/dl-desktop/dl-desktop
             "$@"

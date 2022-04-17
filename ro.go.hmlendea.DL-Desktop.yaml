@@ -10,8 +10,7 @@ command: dl-desktop
 finish-args:
   - --share=ipc
   - --device=dri
-  - --socket=wayland
-  - --socket=fallback-x11
+  - --socket=x11
   - --socket=pulseaudio
   - --share=network
 

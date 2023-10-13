@@ -19,7 +19,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="3.6.0" date="2022-08-13"/>
+    <release version="3.5.0" date="2022-07-11"/>
+    <release version="3.4.0" date="2022-06-11"/>
     <release version="3.3.0" date="2022-04-12"/>
+    <release version="3.2.2" date="2022-04-11"/>
     <release version="3.2.0" date="2022-04-09"/>
     <release version="3.1.0" date="2022-04-08"/>
     <release version="3.0.0" date="2022-03-23"/>

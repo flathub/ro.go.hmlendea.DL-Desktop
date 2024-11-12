@@ -28,9 +28,9 @@ modules:
         --set-key "Exec" --set-value "dl-desktop" --set-key "Icon" --set-value "${FLATPAK_ID}"
     sources:
       - type: file
-        url: https://github.com/hmlendea/dl-desktop/releases/download/v4.0.2/dl-desktop_4.0.2_linux.zip
+        url: https://github.com/hmlendea/dl-desktop/releases/download/v4.0.3/dl-desktop_4.0.3_linux.zip
         dest-filename: dl-desktop.zip
-        sha256: 839e0842ff1619718af8a92e706eaedfaec00c98394c4f4121bf7e1e4a6f5141
+        sha256: 755146df3e8d91b60634ed93917c00bf1cf322966c239d310622d6370229cf2b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/hmlendea/dl-desktop/releases/latest

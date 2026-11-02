@@ -29,14 +29,25 @@ modules:
         --set-key "Exec" --set-value "dl-desktop" --set-key "Icon" --set-value "${FLATPAK_ID}"
     sources:
       - type: file
-        url: https://github.com/hmlendea/dl-desktop/releases/download/v4.3.1/dl-desktop_4.3.1_linux.zip
+        only-arches: [x86_64]
+        url: https://github.com/hmlendea/dl-desktop/releases/download/v4.3.1/dl-desktop_4.3.1_linux_x64.zip
         dest-filename: dl-desktop.zip
         sha256: ee4bba628035a112383f5d32a44afea26b7d7adb141ce255e121e246607a0414
         x-checker-data:
           type: json
           url: https://api.github.com/repos/hmlendea/dl-desktop/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: .assets[] | select(.name=="dl-desktop_" + $version + "_linux.zip")
+          url-query: .assets[] | select(.name=="dl-desktop_" + $version + "_linux_x64.zip")
+            | .browser_download_url
+      - type: file
+        only-arches: [aarch64]
+        url: https://github.com/hmlendea/dl-desktop/releases/download/v4.3.1/dl-desktop_4.3.1_linux_arm64.zip
+        dest-filename: dl-desktop.zip
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/hmlendea/dl-desktop/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="dl-desktop_" + $version + "_linux_arm64.zip")
             | .browser_download_url
       - type: file
         path: ro.go.hmlendea.DL-Desktop.metainfo.xml
